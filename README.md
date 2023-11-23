@@ -28,10 +28,10 @@ spring.sql.init.mode=always
 Descargar Fuentes de git
 
 ```
-git clone https://github.com/JesusGarcia9009/spring-boot-test.git
+git clone https://github.com/aandmaldonado/ms-desafio-java-bci.git
 ```
 
-Una vez descargada las fuentes se debe ejecutar el siguiente comando en consola:
+Una vez descargada las fuentes se deben ejecutar los siguiente comandos por consola:
 
 ```
 gradlew build
@@ -86,18 +86,19 @@ Respuesta:
 }
 ```
 
-## Pre-requisitos 🛠
+## Pre-requisitos 
 
-- ![JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
-- ![Gradle 8.4](https://gradle.org/install/)
+- JDK 17
+- Gradle 8.4
 
-## Construido con 🛠
+## Desarrollo
 
 Herramientas y lenguajes utilizados
 
 * Java 17 - Lenguaje de programación.
 * Spring Boot 3.1.5 - Framework de desarrollo
 * JWT 0.11.5 - Generación de tokens 
+* Swagger 2 - Documentación API
 * Gradle 8.4 - Gestor de dependencias.
 * IntelliJ IDEA 2023.2.5 (Ultimate Edition) - IDE de desarrollo.
 
