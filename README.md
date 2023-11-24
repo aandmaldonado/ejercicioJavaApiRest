@@ -52,7 +52,12 @@ La ejecución para acceder a swagger y api-docs es a traves de los siguientes li
 http://localhost:8080/swagger-ui/index.html
 http://localhost:8080/v3/api-docs
 ```
-
+Antes de la ejecución del servicio, favor considerar que el patron con la regex para validar la contraseña se encuentra de la siguiente propiedad del "application.properties"
+```
+#PATTERN
+#Una Mayuscula, letras minúsculas, y dos numeros
+validation.password.pattern=^([A-Z]{1})+(.*[a-z])+([0-9]{2})$
+```
 La ejecución del servicio de registro es a través de la siguiente url:
 
 ```
@@ -100,6 +105,7 @@ Herramientas y lenguajes utilizados
 * JWT 0.11.5 - Generación de tokens 
 * Swagger 2 - Documentación API
 * Gradle 8.4 - Gestor de dependencias.
+* JUnit 5 - Testing
 * IntelliJ IDEA 2023.2.5 (Ultimate Edition) - IDE de desarrollo.
 
 ## Autor

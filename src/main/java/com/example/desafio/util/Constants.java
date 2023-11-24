@@ -8,5 +8,4 @@ public class Constants {
     public static final String ERR_CORREO_REG = "El correo ya esta registrado.";
     public static final String ERR_FORMATO_CORREO = "El correo no cumple formato correcto (aaaaaaa@dominio.cl).";
     public static final String ERR_FORMATO_PASSWORD = "La clave no cumple formato correcto.";
-    public static final String ERR_CORREO_NOREG = "Correo no registrado.";
 }
