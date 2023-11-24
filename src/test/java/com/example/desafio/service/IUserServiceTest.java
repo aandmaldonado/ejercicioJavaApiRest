@@ -13,10 +13,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ import static org.mockito.Mockito.when;
 
 @ContextConfiguration(classes = {IUserService.class})
 @ExtendWith(SpringExtension.class)
-@SpringBootTest
+@TestPropertySource(properties = "validation.password.pattern=^([A-Z]{1})+(.*[a-z])+([0-9]{2})$")
 class IUserServiceTest {
     @Autowired
     private IUserService iUserService;
@@ -80,7 +80,7 @@ class IUserServiceTest {
                     .phones(new ArrayList<>())
                     .build());
         });
-        assertEquals(ex.getMessage(), "El correo ya esta registrado.");
+        assertEquals("El correo ya esta registrado.", ex.getMessage());
     }
 
     @Test
@@ -94,7 +94,7 @@ class IUserServiceTest {
                     .phones(new ArrayList<>())
                     .build());
         });
-        assertEquals(ex.getMessage(), "El correo no cumple formato correcto (aaaaaaa@dominio.cl).");
+        assertEquals("El correo no cumple formato correcto (aaaaaaa@dominio.cl).", ex.getMessage());
     }
 
     @Test
@@ -108,6 +108,6 @@ class IUserServiceTest {
                     .phones(new ArrayList<>())
                     .build());
         });
-        assertEquals(ex.getMessage(), "La clave no cumple formato correcto.");
+        assertEquals("La clave no cumple formato correcto.", ex.getMessage());
     }
 }
